@@ -8,3 +8,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+gotcp.aar
+gotcp-sources.jar
