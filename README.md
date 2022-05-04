@@ -4,6 +4,11 @@ A repo reproducing the bug whereupon TCP sockets cannot be opened from Go when t
 
 Only reproducible on Android 10+ (API level 29+).
 
+Short structure description:
+
+- `gotcp` is a minimal module that only tries opening a TCP socket via `net.Dial`.
+- `app` holds a minimal Android app that uses that module via gomobile and incorporates the wifi connect logic to showcase the issue.
+
 ## Start example
 
 1. Bind the android lib
