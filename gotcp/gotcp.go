@@ -10,7 +10,7 @@ import (
 
 var log = logrus.New()
 
-func DoDial() {
+func DoDial() error {
 	log.Info("Entered DoDial")
 
 	conn, err := net.DialTimeout("tcp", "192.168.0.1:80", 10 * time.Second)
@@ -19,6 +19,8 @@ func DoDial() {
 	if err == nil {
 		conn.Close()
 	}
+
+	return err
 
 	// s, _ := syscall.Socket(syscall.AF_INET, syscall.SOCK_STREAM, syscall.IPPROTO_TCP)
 	// var lsa, rsa syscall.Sockaddr

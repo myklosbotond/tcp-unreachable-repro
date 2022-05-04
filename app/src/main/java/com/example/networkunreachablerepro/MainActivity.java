@@ -10,6 +10,7 @@ import android.net.wifi.WifiNetworkSpecifier;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import gotcp.Gotcp;
 
@@ -18,11 +19,14 @@ public class MainActivity extends AppCompatActivity {
     public final static String WIFI_PASS = "<Wifi Pass>";
 
     private ConnectivityManager connectivityManager;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.textView = findViewById(R.id.dialError);
 
         this.connectivityManager = (ConnectivityManager) getApplicationContext()
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -56,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
             Gotcp.doDial();
         } catch (Exception e) {
             Log.e("NetUnreach", "Dial failed", e);
+
+            this.textView.setText(e.getMessage());
         }
     }
 }
