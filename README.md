@@ -23,6 +23,12 @@ Only reproducible on Android 10+ (API level 29+).
 
 1. Start android app
 
+    From Android Studio or install it via gradle, then start it manually.
+
+    ```sh
+    ./gradlew installDebug
+    ```
+
 ## Test cases
 
 1. Make sure that cellular data is disabled.
