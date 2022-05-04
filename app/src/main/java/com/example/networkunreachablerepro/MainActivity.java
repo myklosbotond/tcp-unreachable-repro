@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onDialClick(View button) {
         try {
+            this.textView.setText("...");
+
             Gotcp.doDial();
         } catch (Exception e) {
             Log.e("NetUnreach", "Dial failed", e);

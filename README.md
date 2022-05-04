@@ -1,5 +1,9 @@
 # Minimal reproduction of gomobile network issue
 
+A repo reproducing the bug whereupon TCP sockets cannot be opened from Go when the android app is bound to a wifi via NetworkRequest.
+
+Only reproducible on Android 10+ (API level 29+).
+
 ## Start example
 
 1. Bind the android lib
@@ -21,7 +25,9 @@
 
 ## Test cases
 
+1. Make sure that cellular data is disabled.
 1. Press `Do dial` when connected to wifi via system settings and observe the logs.
+
     Should be as follows after the 10s timeout
 
     ```text
@@ -31,6 +37,7 @@
 
 1. Now press `Connect to wifi` and bind the app to the wifi programatically
 1. Press `Do dial` again and check the logs.
+
     Should be as follows, immediately
 
     ```text
