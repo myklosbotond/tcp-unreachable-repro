@@ -2,6 +2,8 @@
 
 A repo reproducing the bug whereupon TCP sockets cannot be opened from Go when the android app is bound to a wifi via NetworkRequest.
 
+See the bug on the main golang repo: https://github.com/golang/go/issues/52702
+
 Only reproducible on Android 10+ (API level 29+).
 
 Short structure description:
